@@ -6,7 +6,7 @@ This project demonstrates how to provision and manage 6 Amazon EC2 instances usi
 
 Architecture
 
-"Terraform AWS Start and Stop 6 EC2 Instances" (architecture.png)
+"Terraform AWS Start and Stop 6 EC2 Instances" (Architecture.png)
 
 AWS Services and Tools
 
