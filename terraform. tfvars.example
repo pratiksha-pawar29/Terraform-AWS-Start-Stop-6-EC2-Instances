@@ -1,0 +1,13 @@
+
+aws_region    = "us-east-1"
+instance_type = "t2.micro"
+
+# Enter an existing EC2 key pair name if you have one.
+key_name = ""
+
+# Optional: enter a subnet ID from the default VPC.
+# Leave empty to select the first available subnet.
+subnet_id = ""
+
+# Valid values: running or stopped
+action = "running"
