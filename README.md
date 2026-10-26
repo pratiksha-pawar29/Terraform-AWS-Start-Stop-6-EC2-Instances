@@ -1,87 +1,115 @@
-# aws-serverless-ec2-start-stop-scheduler
+Terraform + AWS: Start & Stop 6 EC2 Instances
 
-AWS Serverless EC2 Start-Stop Scheduler Using Terraform
+Project Overview
 
-📌 Project Overview
+This project demonstrates how to provision and manage 6 Amazon EC2 instances using Terraform (Infrastructure as Code). It allows you to create six instances and change their power state between running and stopped without deleting them.
 
-This project automates the starting and stopping of Amazon EC2 instances at scheduled times using AWS Lambda, Amazon EventBridge Scheduler, and Terraform. It helps optimize cloud resource usage and reduce unnecessary EC2 running costs.
+Architecture
 
-🏗️ Architecture
+"Terraform AWS Start and Stop 6 EC2 Instances" (architecture.png)
 
-![AWS Serverless EC2 Start-Stop Scheduler Architecture](Architecture.png)
+AWS Services and Tools
 
-Terraform provisions and manages the AWS infrastructure. Amazon EventBridge Scheduler triggers an AWS Lambda function according to the configured schedule. Lambda uses Python and Boto3 to start or stop the selected EC2 instances. Amazon CloudWatch collects execution logs.
+- AWS EC2 – Hosts six virtual machine instances.
+- Terraform – Provisions and manages AWS infrastructure.
+- AWS Provider – Connects Terraform to AWS.
+- Amazon Linux 2023 – Operating system for the EC2 instances.
 
-Workflow:
+Project Features
 
-1. Terraform creates the required AWS resources.
-2. EventBridge Scheduler triggers Lambda at the scheduled time.
-3. Lambda calls the EC2 StartInstances or StopInstances API.
-4. EC2 instances start or stop according to the configured action.
-5. CloudWatch stores execution logs for monitoring and troubleshooting.
+- Creates six EC2 instances using Terraform's "count" meta-argument.
+- Assigns unique names: "Terraform-EC2-1" to "Terraform-EC2-6".
+- Uses variables to configure the AWS region, instance type, and desired state.
+- Starts or stops instances without destroying them.
+- Uses Terraform commands to plan and apply infrastructure changes.
 
-🛠️ Technologies Used
+Project Structure
 
-- AWS EC2
-- AWS Lambda
-- Amazon EventBridge Scheduler
-- AWS IAM
-- Amazon CloudWatch
-- Terraform
-- Python
-- Boto3
-
-✨ Key Features
-
-- Automated EC2 start and stop scheduling
-- Serverless execution using AWS Lambda
-- Infrastructure provisioning using Terraform
-- IAM-based access control
-- CloudWatch logging and monitoring
-- Configurable schedules and target instances
-- Reduced manual administration
-
-📂 Project Structure
-
-aws-serverless-ec2-start-stop-scheduler/
+terraform-ec2-start-stop/
 ├── main.tf
 ├── variables.tf
 ├── outputs.tf
-├── lambda/
-│   └── ec2_scheduler.py
 ├── terraform.tfvars.example
 ├── .gitignore
 └── README.md
 
-🚀 Deployment Steps
+Prerequisites
 
-1. Install Terraform, Python, and the AWS CLI.
-2. Configure AWS credentials securely.
-3. Update the project variables with your AWS region, instance IDs, and schedule.
-4. Initialize Terraform:
-   "terraform init"
-5. Validate the configuration:
-   "terraform validate"
-6. Review the infrastructure plan:
-   "terraform plan"
-7. Deploy the resources:
-   "terraform apply"
+- An AWS account.
+- Terraform installed.
+- AWS CLI configured with appropriate permissions.
+- A default VPC in the selected AWS region.
 
-🎯 Learning Outcomes
+Deployment Steps
 
-- Learned AWS Infrastructure as Code using Terraform.
-- Implemented scheduled cloud automation.
-- Integrated Lambda with EC2 using Boto3.
-- Configured IAM permissions and CloudWatch logging.
-- Explored cost optimization through EC2 lifecycle management.
+Copy "terraform.tfvars.example" to "terraform.tfvars" and review the configuration.
 
-🔐 Security and Cost Considerations
+Initialize Terraform:
 
-- Apply least-privilege IAM permissions to the intended EC2 instances.
-- Never upload AWS access keys, secrets, or Terraform state files to GitHub.
-- Verify schedules and time zones before deployment.
-- Review AWS charges because stopping EC2 instances does not eliminate all associated storage and resource costs.
+terraform init
 
-Author 
+Format the configuration:
+
+terraform fmt -recursive
+
+Validate the code:
+
+terraform validate
+
+Preview the changes:
+
+terraform plan
+
+Create the six EC2 instances:
+
+terraform apply
+
+Stop the EC2 Instances
+
+To stop all six instances without deleting them:
+
+terraform plan -var="action=stopped"
+terraform apply -var="action=stopped"
+
+Start the EC2 Instances
+
+To start all six instances again:
+
+terraform plan -var="action=running"
+terraform apply -var="action=running"
+
+Verify the Results
+
+Open the Amazon EC2 console and check the instance names and states. Terraform outputs can also display the instance IDs and names.
+
+Important Notes
+
+- Replace example settings with values appropriate for your AWS account.
+- The default VPC must exist in the selected region.
+- EC2 usage may incur AWS charges.
+- Stopping instances does not delete them; associated storage may still incur charges.
+- Review "terraform plan" before applying any changes.
+- Do not upload AWS credentials, Terraform state files, or sensitive configuration files to GitHub.
+
+Learning Outcomes
+
+- Understanding Infrastructure as Code.
+- Provisioning multiple EC2 instances using Terraform.
+- Using Terraform variables, outputs, and the "count" meta-argument.
+- Managing EC2 running and stopped states.
+- Using Terraform commands for infrastructure management.
+
+Official Documentation
+
+- "Terraform AWS Provider" (https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- "AWS EC2" (https://docs.aws.amazon.com/ec2/)
+- "Terraform Resources" (https://developer.hashicorp.com/terraform/language/resources)
+
+---
+
+Project: Terraform + AWS — Start & Stop 6 EC2 Instances
+Category: Cloud Computing | AWS | Terraform | Infrastructure as Code
+
+Author
 
 Pratiksha Pawar 
