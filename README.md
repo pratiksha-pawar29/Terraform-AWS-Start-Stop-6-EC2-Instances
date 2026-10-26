@@ -8,7 +8,7 @@ This project automates the starting and stopping of Amazon EC2 instances at sche
 
 🏗️ Architecture
 
-![AWS Serverless EC2 Start-Stop Scheduler Architecture](architecture.png)
+![AWS Serverless EC2 Start-Stop Scheduler Architecture](Architecture.png)
 
 Terraform provisions and manages the AWS infrastructure. Amazon EventBridge Scheduler triggers an AWS Lambda function according to the configured schedule. Lambda uses Python and Boto3 to start or stop the selected EC2 instances. Amazon CloudWatch collects execution logs.
 
