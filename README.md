@@ -1,4 +1,4 @@
-Terraform + AWS: Start & Stop 6 EC2 Instances
+## Terraform + AWS: Start & Stop 6 EC2 Instances
 
 Project Overview
 
