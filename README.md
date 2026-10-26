@@ -6,7 +6,7 @@ This project uses Terraform to provision and manage six Amazon EC2 instances on 
 
 Architecture
 
-"Terraform + AWS: Start & Stop 6 EC2 Instances" (Architecture.png)
+Architecture.png.
 
 Technologies Used
 
