@@ -4,9 +4,10 @@ Project Overview
 
 This project uses Terraform to provision and manage six Amazon EC2 instances on AWS. It allows you to start and stop instances without deleting them.
 
-🏗️ AWS EC2 Start/Stop Automation Architecture
 
-"AWS EC2 Architecture" (./Architecture.png)
+🏗️ Architecture Diagram
+
+"AWS EC2 Start/Stop Automation Architecture" (./Architecture.png)
 
 
 Technologies Used
