@@ -7,8 +7,11 @@ This project uses Terraform to provision and manage six Amazon EC2 instances on 
 
 🏗️ Architecture Diagram
 
-"AWS EC2 Start/Stop Automation Architecture" (./ Architecture.png)
+"AWS EC2 Start/Stop Automation Architecture" (/Architecture.png) 
 
+🏗️ Architecture Diagram
+
+"AWS EC2 Start/Stop Automation" (https://raw.githubusercontent.com/pratiksha-pawar29/aws-serverless-ec2-start-stop-scheduler/main/Architecture.png)
 
 Technologies Used
 
