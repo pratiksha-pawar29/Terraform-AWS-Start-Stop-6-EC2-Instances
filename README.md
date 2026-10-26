@@ -5,8 +5,6 @@ Project Overview
 This project uses Terraform to provision and manage six Amazon EC2 instances on AWS. It allows you to start and stop instances without deleting them.
 
 
-🏗️ Architecture Diagram
-
 
 ## 🏗️ Architecture Diagram
 
